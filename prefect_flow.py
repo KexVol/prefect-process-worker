@@ -1,6 +1,6 @@
 # prefect_flow.py
 from prefect import flow, task
-import  socket
+import socket
 import subprocess
 import sys
 
