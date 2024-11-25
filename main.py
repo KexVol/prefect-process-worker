@@ -24,6 +24,8 @@ def validate_result(result):
       description="Flow demonstrating task orchestration",
       retries=1,
       retry_delay_seconds=60)
+
+
 def data_processing_flow(input_value: int = 10):
     """Main flow that orchestrates data processing tasks"""
 
@@ -41,7 +43,7 @@ if __name__ == "__main__":
     # .from_source() specifies where Prefect should get the flow code from
     data_processing_flow.from_source(
         # The Git repository containing the flow code
-        source="https://github.com/prefecttyree/prefect-process-worker-demo.git",
+        source="https://github.com/KexVol/prefect-process-worker.git",
         # The path to the flow function within the repository
         # Format is: file_path:function_name
         entrypoint="main.py:data_processing_flow"
