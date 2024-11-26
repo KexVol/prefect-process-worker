@@ -3,6 +3,7 @@ from prefect import flow, task
 import socket
 import subprocess
 import sys
+import pygetwindow as gw
 
 @flow(log_prints=True)
 def run_external_python():
@@ -13,6 +14,16 @@ def run_external_python():
     print(result.stderr)
     hostname = socket.gethostname()
     print(f"Hostname: {hostname}")
+
+    # 获取所有窗口
+    windows = gw.getAllTitles()
+
+    # 查找包含 "Google" 的窗口
+    for window_title in windows:
+        if "Google" in window_title:
+            window = gw.getWindowsWithTitle(window_title)[0]
+            window.activate()  # 将窗口置于最前面
+            break
 
 # def playwright_process(input_value: int = 10):
 #     """Main flow that orchestrates data processing tasks"""

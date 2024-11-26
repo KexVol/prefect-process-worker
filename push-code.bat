@@ -1,7 +1,7 @@
 @echo off
 set REPO_URL=https://github.com/KexVol/prefect-process-worker.git
 set BRANCH=main
-set COMMIT_MESSAGE=update code
+set COMMIT_MESSAGE=update code v1
 
 REM Ini if not
 if not exist ".git" (
