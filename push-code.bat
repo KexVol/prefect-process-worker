@@ -1,8 +1,8 @@
 @echo off
 REM 变量定义
-set REPO_URL=https://github.com/KexVol/prefect-process-worker.git  REM 替换为你的远程仓库URL
-set BRANCH=main  REM 替换为你的目标分支
-set COMMIT_MESSAGE=更新代码  REM 提交信息
+set REPO_URL=https://github.com/KexVol/prefect-process-worker.git
+set BRANCH=main
+set COMMIT_MESSAGE=更新代码
 
 REM 初始化 Git 仓库（如果尚未初始化）
 if not exist ".git" (
