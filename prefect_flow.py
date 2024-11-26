@@ -6,11 +6,11 @@ import sys
 
 @flow(log_prints=True)
 def run_playwright_script():
-    print("01")
-    #python_executable = sys.executable
-    #result = subprocess.run([python_executable, "playwright_script.py"], capture_output=True, text=True)
-    # print(result.stdout)
-    # print(result.stderr)
+    print("02")
+    python_executable = sys.executable
+    result = subprocess.run([python_executable, "playwright_script.py"], capture_output=True, text=True)
+    print(result.stdout)
+    print(result.stderr)
     hostname = socket.gethostname()
     print(f"Hostname: {hostname}")
 
