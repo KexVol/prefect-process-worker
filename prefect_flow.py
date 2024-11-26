@@ -8,7 +8,7 @@ import pygetwindow as gw
 
 @flow(log_prints=True)
 def run_external_python():
-    print("111111")
+    print("112222")
     python_executable = sys.executable
     result = subprocess.run([python_executable, "playwright_script.py"], capture_output=True, text=True)
     print(result.stdout)
