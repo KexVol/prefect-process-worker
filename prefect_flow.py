@@ -1,4 +1,5 @@
 # prefect_flow.py
+
 from prefect import flow, task
 import socket
 import subprocess
@@ -7,7 +8,7 @@ import pygetwindow as gw
 
 @flow(log_prints=True)
 def run_external_python():
-    print("run_external_python")
+    print("111111")
     python_executable = sys.executable
     result = subprocess.run([python_executable, "playwright_script.py"], capture_output=True, text=True)
     print(result.stdout)
@@ -24,12 +25,6 @@ def run_external_python():
             window = gw.getWindowsWithTitle(window_title)[0]
             window.activate()  # 将窗口置于最前面
             break
-
-# def playwright_process(input_value: int = 10):
-#     """Main flow that orchestrates data processing tasks"""
-#     run_playwright_script()
-#     print(f"start")
-#     return {"result"}
 
 if __name__ == "__main__":
     # Create a deployment for the flow from a Git repository source
