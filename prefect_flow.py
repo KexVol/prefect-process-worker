@@ -6,7 +6,7 @@ import sys
 
 @flow(log_prints=True)
 def run_external_python():
-    print("0run_external_python")
+    print("run_external_python")
     python_executable = sys.executable
     result = subprocess.run([python_executable, "playwright_script.py"], capture_output=True, text=True)
     print(result.stdout)
@@ -28,11 +28,11 @@ if __name__ == "__main__":
         source="https://github.com/KexVol/prefect-process-worker.git",
         # The path to the flow function within the repository
         # Format is: file_path:function_name
-        entrypoint="prefect_flow.py:run_playwright_script"
+        entrypoint="prefect_flow.py:run_external_python"
     ).deploy(
         # Configure the deployment settings
         # The name that will identify this deployment in the Prefect UI
-        name="get-hostname",
+        name="run_external_python",
         # The work pool that will execute this deployment
         # Must match an existing work pool name in your Prefect server
         work_pool_name="my-process-worker",
