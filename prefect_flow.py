@@ -5,8 +5,8 @@ import subprocess
 import sys
 
 @flow(log_prints=True)
-def run_playwright_script():
-    print("02")
+def run_external_python():
+    print("0run_external_python")
     python_executable = sys.executable
     result = subprocess.run([python_executable, "playwright_script.py"], capture_output=True, text=True)
     print(result.stdout)
@@ -23,7 +23,7 @@ def run_playwright_script():
 if __name__ == "__main__":
     # Create a deployment for the flow from a Git repository source
     # .from_source() specifies where Prefect should get the flow code from
-    run_playwright_script.from_source(
+    run_external_python.from_source(
         # The Git repository containing the flow code
         source="https://github.com/KexVol/prefect-process-worker.git",
         # The path to the flow function within the repository
