@@ -38,7 +38,7 @@ if __name__ == "__main__":
     ).deploy(
         # Configure the deployment settings
         # The name that will identify this deployment in the Prefect UI
-        name="run_external_python",
+        name="Test with Kimora",
         # The work pool that will execute this deployment
         # Must match an existing work pool name in your Prefect server
         work_pool_name="my-process-worker",
